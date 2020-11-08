@@ -7,7 +7,7 @@ TCHAR keyName[] = TEXT("WinApiCriticalSection");
 
 int main()
 {
-	HANDLE fileMapping = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeof(CRITICAL_SECTION), keyName);
+	HANDLE fileMapping = OpenFileMapping(FILE_MAP_ALL_ACCESS, TRUE, keyName);
 
 	if (fileMapping == NULL)
 	{
