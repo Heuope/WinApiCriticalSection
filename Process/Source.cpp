@@ -1,6 +1,6 @@
 #include <iostream>
 #include <windows.h>
-#include <memoryapi.h>
+//#include <memoryapi.h>
 #include <string>
 
 TCHAR keyName[] = TEXT("WinApiCriticalSection");
@@ -26,6 +26,7 @@ int main()
 
 	while (!TryEnterCriticalSection(cs))
 	{
+		std::cout << "Process " << processId << " wait" << std::endl;
 		Sleep(10);
 	}
 
