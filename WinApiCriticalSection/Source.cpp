@@ -2,13 +2,12 @@
 #include <windows.h>
 #include <memoryapi.h>
 #include <string>
-#include "process.h"
 
-TCHAR name[] = TEXT("WinApiCriticalSection");
+TCHAR keyName[] = TEXT("WinApiCriticalSection");
 
 int main()
 {
-	HANDLE fileMapping = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeof(CRITICAL_SECTION), name);
+	HANDLE fileMapping = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeof(CRITICAL_SECTION), keyName);
 
 	if (fileMapping == NULL)
 	{
